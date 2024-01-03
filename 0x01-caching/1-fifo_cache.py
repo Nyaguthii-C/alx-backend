@@ -23,6 +23,7 @@ class FIFOCache(BaseCaching):
         if len(self.cache_data) > BaseCaching.MAX_ITEMS:
             first_item = self.order.pop(0)
             del self.cache_data[first_item]
+            print(f"DISCARD: {first_item}")
 
     def get(self, key):
         """return the value in cache dictionary linked to key"""
