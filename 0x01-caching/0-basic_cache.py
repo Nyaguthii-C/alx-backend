@@ -8,9 +8,8 @@ class BasicCache(BaseCaching):
     """inherit from BaseCaching and is a caching system"""
     def put(self, key, item):
         """assign item value to key in cache dictionary"""
-        self.cache_data[key] = item
-        if key or item is None:
-            pass
+        if key is not None or item is not None:
+            self.cache_data[key] = item
 
     def get(self, key):
         """return the value in cache dictionary linked to key"""
