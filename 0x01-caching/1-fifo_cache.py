@@ -17,8 +17,9 @@ class FIFOCache(BaseCaching):
         delete first item inserted in cache
 
         """
-        if key is not None or item is not None:
-            self.cache_data[key] = item
+        if key is None or item is None:
+            pass
+        self.cache_data[key] = item
         if key not in self.order:
             self.order.append(key)
         if len(self.cache_data) > BaseCaching.MAX_ITEMS:
